@@ -13,6 +13,7 @@
 
 
 (defun latest (&key (base "USD") (prettyprint nil) (show-alternatives nil) (symbols ""))
+  "Gets latest current exchanges."
   (let ((url (concatenate 'string *oxr-api-url* "/latest.json?app_id=" *oxr-api-key*)))
     (when prettyprint
       (setf url (concatenate 'string url "&prettyprint=true")))
@@ -25,6 +26,7 @@
 
 
 (defun get-rate (latest-rates currency)
+  "One rate from latest rates"
   (let ( (ckey (intern (concatenate 'string "+" currency "+") :keyword)))
     (if latest-rates 
       (cdr (assoc ckey (cdr (assoc :rates latest-rates))))
