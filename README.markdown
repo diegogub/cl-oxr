@@ -2,6 +2,8 @@
 
 ## Usage
 
+Openexchangerate CL API
+
 ```
 (setf *oxr-api-key* "[your key]")
 (cl-oxr:get-rates (cl-oxr:latest) '("ARS" "AED" "EUR")
