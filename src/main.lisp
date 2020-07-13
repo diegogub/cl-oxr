@@ -2,7 +2,8 @@
   (:use :cl)
   (:export :latest
            :get-rate
-           :get-rates))
+           :get-rates
+           :*oxr-api-key*))
 (in-package :cl-oxr)
 
 
