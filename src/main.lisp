@@ -20,6 +20,8 @@
       (setf url (concatenate 'string url "&prettyprint=true")))
     (when symbols
       (setf url (concatenate 'string url "&symbols=" symbols)))
+    (when base
+      (setf url (concatenate 'string url "&base=" base)))
     (handler-case 
         (let ((res (dex:get url)))
         (cl-json:decode-json-from-string res))
